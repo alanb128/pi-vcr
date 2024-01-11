@@ -1,0 +1,17 @@
+version: '2'
+volumes:
+    shared-data:
+services:
+  audio:
+    image: bh.cr/balenalabs/audio-armv7hf
+    privileged: true
+    ports:
+      - 4317:4317
+  media-player:
+    build: .
+    privileged: true
+    environment:
+      - 'PULSE_SERVER=tcp:audio:4317'
+      - 'DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket'
+    labels:
+      io.balena.features.dbus: '1'

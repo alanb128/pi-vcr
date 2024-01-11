@@ -1,0 +1,9 @@
+pytz
+requests
+kombu
+sentry-sdk
+pyalsaaudio
+prometheus_client
+importlib-metadata==4.13.0
+adafruit-circuitpython-ht16k33
+adafruit-circuitpython-motor

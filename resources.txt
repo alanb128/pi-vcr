@@ -1,0 +1,73 @@
+https://forums.balena.io/t/vlc-based-media-player-problem-with-hanging-after-n-loops-of-playback/62337
+
+https://www.geeksforgeeks.org/vlc-module-in-python-an-introduction/
+
+https://www.movavi.com/support/how-to/how-to-record-screen-with-vlc.html
+
+https://github.com/ACMILabs/media-player
+
+https://www.olivieraubert.net/vlc/python-ctypes/doc/index.html
+
+https://github.com/balena-labs-projects/audio
+
+https://learn.adafruit.com/using-servos-with-circuitpython/high-level-servo-control
+
+https://learn.adafruit.com/adafruit-led-backpack/0-54-alphanumeric-circuitpython-and-python-usage
+
+https://learn.adafruit.com/circuitpython-on-raspberrypi-linux/installing-circuitpython-on-raspberry-pi
+
+------------------------
+
+https://stackoverflow.com/questions/14140495/how-to-capture-a-video-and-audio-in-python-from-a-camera-or-webcam
+
+https://superuser.com/questions/462309/list-all-alsa-devices
+
+https://ffmpeg.org/ffmpeg-devices.html#video4linux2_002c-v4l2
+
+https://stackoverflow.com/questions/72738553/how-can-i-run-an-ffmpeg-command-in-a-python-script
+
+https://www.bannerbear.com/blog/how-to-use-ffmpeg-in-python-with-examples/
+
+apt-get install v4l-utils ffmpeg
+
+ffmpeg -f video4linux2 -f alsa -i hw:1 -input_format mjpeg -video_size 720x480 -i /dev/video0 out.mpeg
+
+https://ffmpeg.org/ffmpeg-formats.html#tee
+
+https://manpages.ubuntu.com/manpages/xenial/en/man1/ffmpeg-devices.1.html
+
+----
+
+https://unix.stackexchange.com/questions/58526/trouble-getting-vlc-to-record-from-the-webcam-via-command-line
+
+
+root@47749d94edc1:/code# v4l2-ctl --list-formats-ext -d /dev/video0
+ioctl: VIDIOC_ENUM_FMT
+        Type: Video Capture
+
+        [0]: 'MJPG' (Motion-JPEG, compressed)
+                Size: Discrete 480x320
+                        Interval: Discrete 0.040s (25.000 fps)
+                Size: Discrete 640x480
+                        Interval: Discrete 0.040s (25.000 fps)
+                        Interval: Discrete 0.050s (20.000 fps)
+                        Interval: Discrete 0.067s (15.000 fps)
+                        Interval: Discrete 0.100s (10.000 fps)
+                Size: Discrete 720x480
+                        Interval: Discrete 0.040s (25.000 fps)
+                        Interval: Discrete 0.050s (20.000 fps)
+                        Interval: Discrete 0.067s (15.000 fps)
+                        Interval: Discrete 0.100s (10.000 fps)
+        [1]: 'YUYV' (YUYV 4:2:2)
+                Size: Discrete 480x320
+                        Interval: Discrete 0.040s (25.000 fps)
+
+root@47749d94edc1:/code# arecord -l
+**** List of CAPTURE Hardware Devices ****
+card 1: usb-soundcard-1 [MS210x], device 0: USB Audio [USB Audio]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+
+cvlc v4l2:///dev/video0:width=640:height=480 :input-slave=alsa://hw:1,0 --sout="#transcode{vcodec=theo,vb=2000,fps=20,scale=1.0,acodec=vorb,ab=90,channels=1,samplerate=44100}:standard{access=file,mux=ogg,dst=output.ogg}"
+
+cvlc v4l2:///dev/video0:width=640:height=480 :input-slave=alsa://hw:1,0 --x11-display :0 --sout="#transcode{vcodec=theo,vb=2000,fps=20,scale=1.0,acodec=vorb,ab=90,channels=1,samplerate=44100}:duplicate{dst=display,dst=standard{access=file,mux=ogg,dst=output2.ogg}}"
