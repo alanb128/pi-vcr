@@ -13,4 +13,8 @@ The device is based on a Raspberry Pi 3 and has pushbutton transport controls an
 - Some tactile buttons like [these](https://www.adafruit.com/product/1119)
 - A [proto board](https://www.adafruit.com/product/4783) to mount the buttons
 - This I2C [alphanumeric display](https://www.adafruit.com/product/2158)
-- 
+- A [spindle motor](https://www.adafruit.com/product/3882) from a CD player
+- A [motor driver board](https://www.adafruit.com/product/2448) like this Adafruit TB6612 1.2A DC/Stepper Motor Driver Breakout Board
+- one 40 pin ribbon cable like [this one](https://www.amazon.com/Gowoops-Ribbon-Cable-40pin-Raspberry/dp/B01H53OK5U/)
+- 2 three-position RCA Jacks like [this](https://www.amazon.com/gp/product/B09DC5WH9N/)
+- A VHS cassette!
