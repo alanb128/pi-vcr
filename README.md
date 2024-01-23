@@ -10,3 +10,7 @@ The device is based on a Raspberry Pi 3 and has pushbutton transport controls an
 ## Hardware
  - [Raspberry Pi 3A+](https://www.raspberrypi.com/products/raspberry-pi-3-model-a-plus/) (although almost any Pi 3 or newer will work, only this one fits properly in the cassette shell with all the other parts)
  - USB composite video capture device like [this one](https://www.adafruit.com/product/4715?gad_source=1&gclid=Cj0KCQiAnfmsBhDfARIsAM7MKi1wdS5HnpMFaeHb39HGcsBSM0k1g0lLzFJhsMASe7mWKTzxYlqXkvwaAgzEEALw_wcB)
+- Some tactile buttons like [these](https://www.adafruit.com/product/1119)
+- A [proto board](https://www.adafruit.com/product/4783) to mount the buttons
+- This I2C [alphanumeric display](https://www.adafruit.com/product/2158)
+- 
