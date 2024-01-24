@@ -49,7 +49,7 @@ The media-player container runs a headless version of VLC (without a UI) and als
 ### To Do
 The recording feature is still a bit dodgy. Since we want the device to record incoming audio/video and also display it, we're using the command on this line: https://github.com/alanb128/pi-vcr/blob/main/vcr.py#L62 However, it is difficult to stop the recording without restarting the whole Python script. If we could get the syntax to use that recording command with the Python API, it would work a lot better.
 
-## References
+### References
 I found some good examples of how to install, run, and control VLC in a container from this repo: https://github.com/ACMILabs/media-player
 
 This link was also helpful: https://www.geeksforgeeks.org/vlc-module-in-python-an-introduction/
