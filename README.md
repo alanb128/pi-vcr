@@ -21,6 +21,39 @@ The device is based on a Raspberry Pi 3 and has pushbutton transport controls an
 
 ### Hardware setup
 
-Use the following diagram and tips below to connect all of the elements together:
+There are many options for assembling the hardware, but the images below show one way to make all of the parts fit together inside the VHS cassette. For more details see the Hackster article and the YouTube video. (both coming soon)
+
+Some notes:
+- The code lines [starting here](https://github.com/alanb128/pi-vcr/blob/main/vcr.py#L36) determine the GPIO pins to connect to the various pushbuttons, using a common ground. (pins are pulled high by default)
+- The alphanumeric backpack is connected via I2C
+- To fit the capture device in the case, remove its outer shell and disconnect the RCA cables from the pico blade connector. You can use combinations of connectors [such as these](https://www.adafruit.com/product/4722) to connect to the capture card's connectors to the RCA jacks.
+- Use the vhs-rca-bracket.stl file in the repo to prnt brackets to hold the RCA jacks in place.
+- Use the vhs-motor-bracket.stl file to print a bracket to hold the spindle motor in place.
+
+## Software
+
+The software runs on the [balena](www.balena.io) platform which makes running containers on the Pi very easy! Set up a free account and then simply click the button below to download an image which you can flash to a microSD card and boot the Pi from it.
+
+[![balena deploy button](https://www.balena.io/deploy.svg)](https://dashboard.balena-cloud.com/deploy?repoUrl=https://github.com/alanb128/pi-vcr)
+
+If the hardware is assembled properly, the software should run and you'll see "VCR" on the display.
+
+## Misc
+
+### How it works
+
+The media-player container runs a headless version of VLC (without a UI) and also uses the [python-vlc](https://pypi.org/project/python-vlc/) module to control VLC playback and recording. Adafruit libraries for the motor control hardware and alphanumeric display are also installed.
+
+### To Do
+The recording feature is still a bit dodgy. Since we want the device to record incoming audio/video and also display it, we're using the command on this line: https://github.com/alanb128/pi-vcr/blob/main/vcr.py#L62 However, it is difficult to stop the recording without restarting the whole Python script. If we could get the syntax to use that recording command with the Python API, it would work a lot better.
+
+## References
+I found some good examples of how to install, run, and control VLC in a container from this repo: https://github.com/ACMILabs/media-player
+
+This link was also helpful: https://www.geeksforgeeks.org/vlc-module-in-python-an-introduction/
+
+
+
+
 
 
