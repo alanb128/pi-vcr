@@ -23,6 +23,8 @@ The device is based on a Raspberry Pi 3 and has pushbutton transport controls an
 
 There are many options for assembling the hardware, but the images below show one way to make all of the parts fit together inside the VHS cassette. For more details see the Hackster article and the YouTube video. (both coming soon)
 
+<img src="inside.jpg">
+
 Some notes:
 - The code lines [starting here](https://github.com/alanb128/pi-vcr/blob/main/vcr.py#L36) determine the GPIO pins to connect to the various pushbuttons, using a common ground. (pins are pulled high by default)
 - The alphanumeric backpack is connected via I2C
