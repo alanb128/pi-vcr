@@ -29,8 +29,8 @@ Some notes:
 - The code lines [starting here](https://github.com/alanb128/pi-vcr/blob/main/vcr.py#L36) determine the GPIO pins to connect to the various pushbuttons, using a common ground. (pins are pulled high by default)
 - The alphanumeric backpack is connected via I2C
 - To fit the capture device in the case, remove its outer shell and disconnect the RCA cables from the pico blade connector. You can use combinations of connectors [such as these](https://www.adafruit.com/product/4722) to connect to the capture card's connectors to the RCA jacks.
-- Use the vhs-rca-bracket.stl file in the repo to prnt brackets to hold the RCA jacks in place.
-- Use the vhs-motor-bracket.stl file to print a bracket to hold the spindle motor in place.
+- Use the vhs-rca-bracket.stl file in the repo to 3D print brackets to hold the RCA jacks in place.
+- Use the vhs-motor-bracket.stl file to 3D print a bracket to hold the specified spindle motor in place.
 
 ## Software
 
@@ -46,7 +46,7 @@ If the hardware is assembled properly, the software should run and you'll see "V
 
 The media-player container runs a headless version of VLC (without a UI) and also uses the [python-vlc](https://pypi.org/project/python-vlc/) module to control VLC playback and recording. Adafruit libraries for the motor control hardware and alphanumeric display are also installed.
 
-### To Do
+### To do
 The recording feature is still a bit dodgy. Since we want the device to record incoming audio/video and also display it, we're using the command on this line: https://github.com/alanb128/pi-vcr/blob/main/vcr.py#L62 However, it is difficult to stop the recording without restarting the whole Python script. If we could get the syntax to use that recording command with the Python API, it would work a lot better.
 
 ### References
