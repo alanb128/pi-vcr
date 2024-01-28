@@ -21,7 +21,7 @@ The device is based on a Raspberry Pi 3 and has pushbutton transport controls an
 
 ### Hardware setup
 
-There are many options for assembling the hardware, but the image below shows one way to make all of the parts fit together inside the VHS cassette. For more details see the Hackster article and the YouTube video. (both coming soon)
+There are many options for assembling the hardware, but the image below shows one way to make all of the parts fit together inside the VHS cassette. For more details see [this Hackster article](https://www.hackster.io/alan-boris/vhs-cassette-video-recorder-4f3f81) and the [YouTube video](https://youtu.be/sYreNd7PwSI?si=DqLtNv-wiON-AaUu). 
 
 <img src="inside.jpg">
 
